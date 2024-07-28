@@ -1,3 +1,3 @@
 export interface IReceiptRepository{
-    attachImage(id:string, image:string):object
+    attachImage(image:string):object;
 }

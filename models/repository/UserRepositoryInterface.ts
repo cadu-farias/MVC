@@ -1,5 +1,4 @@
 import { IUser } from "../IUser";
-import { IBankAccount } from "../IBankAccount";
 export interface UserRepositoryInterface {
     register(username:string, password:string, email:string, nome:string):object;
 
@@ -7,7 +6,6 @@ export interface UserRepositoryInterface {
 
     changePassoword(user:IUser, newPassword:string):object;
 
-    getAccount(user:IUser): IBankAccount | undefined;
-
+    usernameExists(username:string):boolean
 
 }
