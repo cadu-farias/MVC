@@ -1,6 +1,7 @@
+import { IBankAccount } from "../models/IBankAccount";
 import { User } from "../models/User";
 import { UserRepositoryFuleiro } from "../models/UserRepoitoryFuleiro";
-import { UserRepositoryInterface } from "../models/UserRepositoryInterface";
+import { UserRepositoryInterface } from "../models/repository/UserRepositoryInterface";
 import {error_message, success_message} from "./messageReturn";
 
 export class UserController implements UserRepositoryInterface {
@@ -45,6 +46,10 @@ export class UserController implements UserRepositoryInterface {
         }
         const userNewPassword = this.userRepository.changePassoword(user, newPassword)
         return userNewPassword
+    }
+
+    getAccount(user:User):IBankAccount | undefined{
+        return this.userRepository.getAccount(user)
     }
     
 }

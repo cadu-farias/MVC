@@ -1,6 +1,7 @@
-import { UserRepositoryInterface } from "./UserRepositoryInterface";
+import { IUser } from "./IUser";
+import { UserRepositoryInterface } from "./repository/UserRepositoryInterface";
 import { User } from "./User";
-import {error_message} from "../controllers/messageReturn";
+import { IBankAccount } from "./IBankAccount";
 
 export class UserRepositoryFuleiro implements UserRepositoryInterface{
     private users: User[] = [];
@@ -19,6 +20,14 @@ export class UserRepositoryFuleiro implements UserRepositoryInterface{
     changePassoword(user:User, newPassword:string):object{
         user.password = newPassword
         return user
+    }
+
+    getAccount(user: IUser): IBankAccount | undefined {
+        const accountUser = this.users.find(u=> u.id === user.id);
+        if(accountUser){
+            return accountUser.contaBancaria
+        }
+        return undefined
     }
 
 }
