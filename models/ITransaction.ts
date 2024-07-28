@@ -6,6 +6,7 @@ export interface ITransaction{
     data: Date;
     valor:number;
     categoria:ICategory;
-    descricao?: string
+    tipo:boolean; // false despesa - true receita
+    descricao?: string;
     recibo?: IReceipt;
 }

@@ -1,7 +1,7 @@
 export interface ITransactionRepository{
-    addTransaction(id:string, data:Date, valor:number, categoria:string, descricao?:string, recibo?:string):object;
+    addTransaction(data:Date, valor:number, categoriaId:string, tipo:boolean, descricao?:string, recibo?:string):object;
 
-    editTrasaction(id:string, data:Date, valor:number, categoria:string, descricao?:string, recibo?:string):object;
+    editTrasaction(id:string, data:Date, valor:number, categoriaId:string, tipo:boolean, descricao?:string, recibo?:string):object | null;
     
-    deleteTransaction(id:string):object;
+    deleteTransaction(id:string):object | null;
 }

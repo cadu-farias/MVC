@@ -1,9 +1,9 @@
 export interface ICategoryRepository{
-    addCategory(id:string, nome:string,tipo:boolean):object;
+    addCategory(nome:string,tipo:boolean):object;
 
-    editCategory(id:string, nome:string, tipo:boolean):object;
+    editCategory(id:string, nome:string, tipo:boolean):object | null;
 
-    deleteCategory(id:string);
+    deleteCategory(id:string): object | null;
 
     listCategory():object;
     

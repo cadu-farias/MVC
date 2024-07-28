@@ -1,4 +1,3 @@
-import { IBankAccount } from "../models/IBankAccount";
 import { User } from "../models/User";
 import { UserRepositoryFuleiro } from "../models/UserRepoitoryFuleiro";
 import { UserRepositoryInterface } from "../models/repository/UserRepositoryInterface";
@@ -26,6 +25,8 @@ export class UserController implements UserRepositoryInterface {
             return error_message('Existem campos vazios')
         }else if(password.length <=3){
             return error_message('Senha muito pequena')
+        }else if(this.usernameExists(username)){
+            return error_message('Já existe esse username')
         }
         else{
             this.userRepository.register(username,password,email,nome)
@@ -47,9 +48,7 @@ export class UserController implements UserRepositoryInterface {
         const userNewPassword = this.userRepository.changePassoword(user, newPassword)
         return userNewPassword
     }
-
-    getAccount(user:User):IBankAccount | undefined{
-        return this.userRepository.getAccount(user)
+    usernameExists(username:string):boolean{
+        return this.userRepository.usernameExists(username)
     }
-    
 }
