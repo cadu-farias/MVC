@@ -1,11 +1,12 @@
 import { IUser } from "./IUser";
-
+import { IBankAccount } from "./IBankAccount";
 export class User implements IUser {
     id: string;
     username: string;
     password: string;
     email: string;
     nome: string;
+    contaBancaria?: IBankAccount | undefined;
     
     constructor(id:string, username:string, password:string, email:string, nome:string){
         this.id = id;
