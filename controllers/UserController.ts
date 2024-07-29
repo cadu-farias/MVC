@@ -1,7 +1,7 @@
 import { User } from "../models/User";
 import { UserRepositoryFuleiro } from "../models/UserRepoitoryFuleiro";
 import { UserRepositoryInterface } from "../models/repository/UserRepositoryInterface";
-import {error_message, success_message} from "./messageReturn";
+import { error_message, success_message } from "./messageReturn";
 
 export class UserController implements UserRepositoryInterface {
 

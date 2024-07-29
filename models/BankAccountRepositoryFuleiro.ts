@@ -5,7 +5,7 @@ export class BankAccountRepositoryFuleiro implements IBankAccountRepository{
     private accounts: BankAccount[] = [];
 
     addAccount(idUser:string,nome: string, saldo: number): object {
-        const account:BankAccount = new BankAccount('p'+this.accounts.length,idUser,nome,saldo);
+        const account:BankAccount = new BankAccount('b'+this.accounts.length,idUser,nome,saldo);
         this.accounts.push(account);
         return account
     }
