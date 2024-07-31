@@ -1,8 +1,6 @@
-import { BankAccount } from "../models/BankAccount";
 import { BankAccountRepositoryFuleiro } from "../models/BankAccountRepositoryFuleiro";
-import { IBankAccount } from "../models/IBankAccount";
 import { IBankAccountRepository } from "../models/repository/IBankAccountRepository";
-import {error_message, success_message} from "./messageReturn";
+import { error_message } from "./messageReturn";
 
 export class BankAccountController implements IBankAccountRepository{
     private static instace: BankAccountController | null = null

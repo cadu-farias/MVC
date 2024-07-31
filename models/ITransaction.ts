@@ -5,8 +5,8 @@ export interface ITransaction{
     id: string;
     data: Date;
     valor:number;
-    categoria:ICategory;
+    categoriaId:string;
     tipo:boolean; // false despesa - true receita
     descricao?: string;
-    recibo?: IReceipt;
+    recibo?: IReceipt | undefined;
 }
